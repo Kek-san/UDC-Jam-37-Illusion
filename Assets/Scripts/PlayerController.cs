@@ -7,24 +7,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _lookSens = 0.1f;
     [SerializeField] float _upDownLookRange = 80f;
 
-    private Vector2 _lookVector = Vector2.zero;
     private Vector2 _moveVector = Vector2.zero;
     private bool _isSprinting = false;
     private InputHandler _inputHandler;
 
     private void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         _inputHandler = InputHandler.Instance;
         _inputHandler.OnMove += InputHandler_OnMove;
-        _inputHandler.OnLook += InputHandler_OnLook;
         _inputHandler.OnSprint += InputHandler_OnSprint;
     }
 
     private void InputHandler_OnSprint(bool obj) {
         _isSprinting = obj;
-    }
-
-    private void InputHandler_OnLook(Vector2 vector) {
-        _lookVector = vector;
     }
 
     private void InputHandler_OnMove(Vector2 vector) {
