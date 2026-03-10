@@ -4,8 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float _moveSpeed = 10f;
-    [SerializeField] float _lookSens = 0.1f;
-    [SerializeField] float _upDownLookRange = 80f;
+
 
     private Vector2 _moveVector = Vector2.zero;
     private bool _isSprinting = false;
@@ -30,7 +29,9 @@ public class PlayerController : MonoBehaviour
     private void Update() {
         Vector2 moveInput = _moveVector;
 
-        Vector3 moveDir = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 moveDir = new Vector3(moveInput.x, 0,  moveInput.y);
+
+        moveDir = transform.right * moveDir.x + transform.forward * moveDir.z;
 
         float dotProduct = Vector3.Dot(transform.forward, moveDir);
         if (_isSprinting && dotProduct > 0) {
