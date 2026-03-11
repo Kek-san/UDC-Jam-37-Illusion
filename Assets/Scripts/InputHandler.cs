@@ -9,6 +9,8 @@ public class InputHandler : MonoBehaviour
     public Action<Vector2> OnMove;
     public Action<Vector2> OnLook;
     public Action<bool> OnSprint;
+    public Action OnAttack;
+    public Action OnInteract;
 
     private InputSystem_Actions _inputAction;
 
@@ -32,6 +34,16 @@ public class InputHandler : MonoBehaviour
         _inputAction.Player.Look.canceled += Look_canceled;
         _inputAction.Player.Sprint.performed += Sprint_performed;
         _inputAction.Player.Sprint.canceled += Sprint_canceled;
+        _inputAction.Player.Attack.performed += Attack_performed;
+        _inputAction.Player.Interact.performed += Interact_performed;
+    }
+
+    private void Interact_performed(InputAction.CallbackContext context) {
+        OnInteract?.Invoke();
+    }
+
+    private void Attack_performed(InputAction.CallbackContext obj) {
+        OnAttack?.Invoke();
     }
 
     private void Sprint_performed(InputAction.CallbackContext context) {
