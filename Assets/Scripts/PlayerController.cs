@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _interactRange = 5f;
     [SerializeField] float _inteactRadius = 1f;
     [SerializeField] LayerMask _interactLayer;
+    [SerializeField] Transform _flashLightLocation;
 
     private Flashlight _flashLight;
+    private IInteractable _interactable;
 
 
     private Vector2 _moveVector = Vector2.zero;
@@ -32,7 +35,7 @@ public class PlayerController : MonoBehaviour
         _moveVector = vector;
     }
     private void InputHandler_OnInteract() {
-        
+        _interactable.Interact(this);
     }
 
     private void InputHandler_OnAttack() {
@@ -43,16 +46,25 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
         Movement();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool hasInteractable = Physics.SphereCast(ray, _inteactRadius, out RaycastHit hitInfo, _interactRange, _interactLayer);
+        bool hasInteractable = Physics.Raycast(Camera.main.transform.position, 
+                                               Camera.main.transform.forward, 
+                                               out RaycastHit hitInfo, 
+                                               _interactRange, 
+                                               _interactLayer);
 
         if (hasInteractable)
         {
 
+            _interactable = hitInfo.transform.GetComponent<IInteractable>();
+            if (_interactable == null) return;
         }
+
 
     }
 
+    private void OnDrawGizmos() {
+        Gizmos.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * _interactRange);
+    }
     private void Movement() {
         Vector2 moveInput = _moveVector;
 
@@ -67,5 +79,21 @@ public class PlayerController : MonoBehaviour
 
         }
         transform.position += moveDir * _moveSpeed * Time.deltaTime;
+    }
+
+    public void SetFlashlight(Flashlight flashlight) {
+        _flashLight = flashlight;
+        _flashLight.GetComponent<BoxCollider>().enabled = false;
+        _flashLight.transform.parent = _flashLightLocation;
+        _flashLight.transform.localPosition = Vector3.zero;
+        _flashLight.transform.localEulerAngles = Vector3.zero;
+    }
+
+    public void ClearFlashlight() {
+        _flashLight = null;
+    }
+
+    public Flashlight GetFlashlight() {
+        return _flashLight;
     }
 }
