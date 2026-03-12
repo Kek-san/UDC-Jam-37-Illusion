@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float _moveSpeed = 10f;
     [SerializeField] float _interactRange = 5f;
-    [SerializeField] float _inteactRadius = 1f;
     [SerializeField] LayerMask _interactLayer;
     [SerializeField] Transform _flashLightLocation;
 
@@ -35,6 +34,7 @@ public class PlayerController : MonoBehaviour
         _moveVector = vector;
     }
     private void InputHandler_OnInteract() {
+        if (_interactable == null) return;
         _interactable.Interact(this);
     }
 
