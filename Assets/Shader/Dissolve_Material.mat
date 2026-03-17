@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DissolveEffect_Legs
-  m_Shader: {fileID: -6465566751694194690, guid: e90ec00d5f359434c8f165993b8a8f76, type: 3}
+  m_Name: Dissolve_Material
+  m_Shader: {fileID: -6465566751694194690, guid: c2cee72024f556b43a64b5b4ba6a2854, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Base:
-        m_Texture: {fileID: 2800000, guid: c444e3d02d2fcff4d9fe5211d67652a0, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -58,14 +58,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicSmoothness:
-        m_Texture: {fileID: 2800000, guid: 1c98c94efa7792645972ecf95e6f86c2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Normal:
-        m_Texture: {fileID: 2800000, guid: b2c5d9c39850da946ae135dcb57faaea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -108,16 +100,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _Enabled: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NoiseAmp: 0.5
-    - _NoiseSize: 100
-    - _NoiseSpeed: 0.1
-    - _Normal_Multiplier: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -133,16 +120,15 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 8, b: 6.8880024, a: 1}
+    - _BaseColor: {r: 0.764151, g: 0.3063813, b: 0.3063813, a: 1}
+    - _Color: {r: 0.7924528, g: 0.31025273, b: 0.31025273, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PlaneForward: {r: -0.99963653, g: 0.0105755925, b: 0.02480158, a: 0}
     - _PlanePosition: {r: 2.14, g: 1.6210004, b: -22.326, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Test: {r: 1, g: 1.1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7845533539019178441
+--- !u!114 &5537691321851543945
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

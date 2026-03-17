@@ -108,11 +108,15 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _Enabled: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NoiseAmp: 0.5
+    - _NoiseSize: 100
+    - _NoiseSpeed: 0.1
     - _Normal_Multiplier: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -130,11 +134,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 8, b: 6.8880024, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlaneForward: {r: -0.7631686, g: -0.6457236, b: 0.024799824, a: 0}
-    - _PlanePosition: {r: 1.564, g: 1.593, b: -22.24, a: 0}
+    - _PlaneForward: {r: -0.99963653, g: 0.0105755925, b: 0.02480158, a: 0}
+    - _PlanePosition: {r: 2.14, g: 1.6210004, b: -22.326, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Test: {r: 0.1, g: 0.9, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7845533539019178441
