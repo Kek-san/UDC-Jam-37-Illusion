@@ -114,9 +114,9 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NoiseAmp: 0.5
-    - _NoiseSize: 100
-    - _NoiseSpeed: 0.1
+    - _NoiseAmp: 0.2
+    - _NoiseSize: 20
+    - _NoiseSpeed: 0.05
     - _Normal_Multiplier: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -136,8 +136,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 8, b: 6.8880024, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlaneForward: {r: -0.99963653, g: 0.0105755925, b: 0.02480158, a: 0}
+    - _PlaneForward: {r: 0, g: 0.000000119209275, b: 1, a: 0}
     - _PlanePosition: {r: 2.14, g: 1.6210004, b: -22.326, a: 0}
+    - _PlaneRight: {r: 1, g: 0, b: 0, a: 0}
+    - _PlaneSize: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Test: {r: 1, g: 1.1, b: 0, a: 0}
   m_BuildTextureStacks: []

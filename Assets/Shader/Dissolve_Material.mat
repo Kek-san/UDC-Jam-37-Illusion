@@ -123,7 +123,7 @@ Material:
     - _BaseColor: {r: 0.764151, g: 0.3063813, b: 0.3063813, a: 1}
     - _Color: {r: 0.7924528, g: 0.31025273, b: 0.31025273, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlaneForward: {r: -0.99963653, g: 0.0105755925, b: 0.02480158, a: 0}
+    - _PlaneForward: {r: 0, g: 0.000000119209275, b: 1, a: 0}
     - _PlanePosition: {r: 2.14, g: 1.6210004, b: -22.326, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
